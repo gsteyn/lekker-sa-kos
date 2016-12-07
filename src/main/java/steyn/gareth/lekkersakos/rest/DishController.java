@@ -22,8 +22,8 @@ import steyn.gareth.lekkersakos.service.DishService;
  * @author Gareth
  */
 @RestController
-@RequestMapping(value = "/dishes", produces = MediaType.APPLICATION_JSON_VALUE)
-public class DishController {
+@RequestMapping(value = "/api", produces = MediaType.APPLICATION_JSON_VALUE)
+public class DishController extends BaseController {
 	
 	static final Logger logger = LogManager.getLogger(DishController.class.getName());
 	
@@ -35,7 +35,9 @@ public class DishController {
 	 * The service returns the collection of Dishes as JSON.
 	 * @return a ResponseEntity containing a Collection of Dish objects.
 	 */
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(
+			value = "/dishes",
+			method = RequestMethod.GET)
 	public ResponseEntity<Collection<Dish>> findAll() {
 		logger.debug("> findAll");
 		return new ResponseEntity<Collection<Dish>> (dishService.findAll(), HttpStatus.OK);

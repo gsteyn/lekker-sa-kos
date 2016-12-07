@@ -4,6 +4,7 @@
 * Spring Boot 1.3.6 
 * log4j2 (via Spring Boot)
 * JUnit4 (via Spring Boot)
+* Mockito (via Spring Boot)
 * JDK 1.7
 
 ## Tools used:
@@ -19,3 +20,4 @@
 * Change the url and login credentials for your restored database in `<project_path>/src/main/resources/application.properties`
 * Download project libraries and jars via Maven.
 * Run the project via the embedded Tomcat by using the mvn command: `mvn spring-boot:run`
+** Api Url: http://localhost:8080/api/dishes

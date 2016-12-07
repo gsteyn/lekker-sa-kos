@@ -9,6 +9,11 @@ import org.junit.Assert;
 import steyn.gareth.lekkersakos.AbstractTest;
 import steyn.gareth.lekkersakos.model.Dish;
 
+/**
+ * Unit tests for the DishService and DishServiceBean.
+ * 
+ * @author Gareth
+ */
 public class DishServiceTest extends AbstractTest {
 
 	@Autowired
