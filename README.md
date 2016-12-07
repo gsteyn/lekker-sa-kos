@@ -2,8 +2,9 @@
 
 ## Libraries used:
 * Spring Boot 1.3.6 
+* log4j2 (via Spring Boot)
+* JUnit4 (via Spring Boot)
 * JDK 1.7
-* Maven 3.*
 
 ## Tools used:
 * Maven 3.*
