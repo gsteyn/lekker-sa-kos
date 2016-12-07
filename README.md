@@ -1,7 +1,7 @@
 # lekker-sa-kos
 
 ## Libraries used:
-* Spring Boot 1.3.6 
+* Spring Boot 1.4.2 
 * log4j2 (via Spring Boot)
 * JUnit4 (via Spring Boot)
 * Mockito (via Spring Boot)
