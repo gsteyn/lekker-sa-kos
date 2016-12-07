@@ -1,1 +1,20 @@
 # lekker-sa-kos
+
+## Libraries used:
+* Spring Boot 1.3.6 
+* JDK 1.7
+* Maven 3.*
+
+## Tools used:
+* Maven 3.*
+* Tomcat (embedded via Maven using Spring Boot)
+
+## DB Used:
+* MySQL 5.7
+
+## Setting up & running the project:
+* Restore the dev database dump files on your local MySQL server.
+** Location of dump file: `<project_path>/src/main/db/`
+* Change the url and login credentials for your restored database in `<project_path>/src/main/resources/application.properties`
+* Download project libraries and jars via Maven.
+* Run the project via the embedded Tomcat by using the mvn command: `mvn spring-boot:run`
