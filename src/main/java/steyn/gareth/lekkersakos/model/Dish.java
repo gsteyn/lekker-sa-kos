@@ -54,6 +54,14 @@ public class Dish {
 		this.publishDate = publishDate;
 	}
 
+	private String getName() {
+		return name;
+	}
+
+	private void setName(String name) {
+		this.name = name;
+	}
+
 	public Boolean getIsVegetarian() {
 		return isVegetarian;
 	}
