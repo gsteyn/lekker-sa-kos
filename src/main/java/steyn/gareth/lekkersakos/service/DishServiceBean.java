@@ -1,7 +1,10 @@
 package steyn.gareth.lekkersakos.service;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Collection;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +27,7 @@ public class DishServiceBean implements DishService {
 	
 	@Autowired
 	private DishRepository dishRepo;
-	
+
 	@Override
 	public Collection<Dish> findAll() {
 		logger.debug("> findAll");
@@ -33,6 +36,21 @@ public class DishServiceBean implements DishService {
 		
 		logger.debug("< findAll");
 		return dishes;
+	}
+	
+	@Override
+	public String getImageLocation(String dishId) throws IOException {
+		logger.debug("> getImageLocation");
+		
+		Dish dish = dishRepo.findOne(Long.parseLong(dishId));
+		String imageLocation = File.separator + "img" + File.separator + "dish_" + dishId + ".png"; 
+		
+		File dishImage = FileUtils.getFile(new File(".").getCanonicalPath() + imageLocation);
+		
+		FileUtils.writeByteArrayToFile(dishImage, dish.getImage());
+		
+		logger.debug("< getImageLocation");
+		return imageLocation;
 	}
 
 }

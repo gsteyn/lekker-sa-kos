@@ -9,8 +9,11 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="dish")
@@ -34,6 +37,11 @@ public class Dish {
 	
 	@Column(nullable = false)
 	private String instructions;
+	
+	@JsonIgnore
+	@Lob
+	@Column(name="dish_image", columnDefinition="longblob")
+	private byte[] image;
 	
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "dish")
 	private List<Ingredient> ingredients;
@@ -86,6 +94,14 @@ public class Dish {
 		this.instructions = instructions;
 	}
 
+	public byte[] getImage() {
+		return image;
+	}
+
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
+	
 	public List<Ingredient> getIngredients() {
 		return ingredients;
 	}

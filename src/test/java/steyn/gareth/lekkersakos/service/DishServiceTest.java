@@ -26,4 +26,12 @@ public class DishServiceTest extends AbstractTest {
 		Assert.assertNotNull("failure -> expected not null", dishes);
 	}
 	
+	@Test
+	public void testGetImageLocation() throws Exception {
+		String imageLocation = fixture.getImageLocation("1");
+		
+		Assert.assertNotNull("failure -> expected not null", imageLocation);
+		Assert.assertTrue(imageLocation.contains("dish_1.png"));
+	}
+	
 }

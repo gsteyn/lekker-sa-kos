@@ -17,3 +17,6 @@ target/
 
 bin/
 .git/
+img/
+
+!.gitignore

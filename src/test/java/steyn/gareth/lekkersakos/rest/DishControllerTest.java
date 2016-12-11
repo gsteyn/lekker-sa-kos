@@ -45,4 +45,20 @@ public class DishControllerTest extends AbstractControllerTest {
                 content.trim().length() > 0);
 	}
 	
+	@Test
+	public void testGetImageLocation() throws Exception {
+		String uri = "/api/dishes/image/1";
+        
+		MvcResult result = mvc.perform(MockMvcRequestBuilders.get(uri)
+                .accept(MediaType.APPLICATION_JSON)).andReturn();
+		
+		String content = result.getResponse().getContentAsString();
+        int status = result.getResponse().getStatus();
+        
+        Assert.assertEquals("failure -> expected HTTP status", 200, status);
+        Assert.assertTrue(
+                "failure -> expected HTTP response body to have a value",
+                content.trim().length() > 0);
+	}
+	
 }
