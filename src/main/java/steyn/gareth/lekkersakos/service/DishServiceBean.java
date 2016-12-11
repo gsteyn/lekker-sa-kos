@@ -50,7 +50,7 @@ public class DishServiceBean implements DishService {
 		FileUtils.writeByteArrayToFile(dishImage, dish.getImage());
 		
 		logger.debug("< getImageLocation");
-		return imageLocation;
+		return imageLocation.replaceAll("\\\\", "/");
 	}
 
 }
